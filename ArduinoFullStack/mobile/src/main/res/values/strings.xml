@@ -5,4 +5,16 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_log_screen">LogScreen</string>
+
+    <!--MainActivity-->
+    <string name="connect_arduino_bluetooth">Connect to Arduino via Bluetooth</string>
+    <string name="available_BT_devices">Available Bluetooth devices</string>
+    <string name="andruino">Andruino</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="usb_otg">USB_OTG</string>
+
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
