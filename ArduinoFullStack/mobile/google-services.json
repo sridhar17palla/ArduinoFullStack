@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "88864260905",
+    "firebase_url": "https://arduinofullstack-f51fe.firebaseio.com",
+    "project_id": "arduinofullstack-f51fe",
+    "storage_bucket": "arduinofullstack-f51fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88864260905:android:0a133294d03975bb",
+        "android_client_info": {
+          "package_name": "firebasetestapplication.playarduino.nextlevel.com.firebasetestapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88864260905-adfr7nh3rtmv5leu6jao4fil3dvlt291.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "firebasetestapplication.playarduino.nextlevel.com.firebasetestapplication",
+            "certificate_hash": "7725b99149309c152094fc1cf99197df2259d03a"
+          }
+        },
+        {
+          "client_id": "88864260905-qmi7qktsdd479gqjo6jheurmkpibf362.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyigBcf8ss3EeyjBFMD-4Otum9VERVz08"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88864260905-qmi7qktsdd479gqjo6jheurmkpibf362.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88864260905:android:29c462b58c4377b8",
+        "android_client_info": {
+          "package_name": "com.nextlevel.playarduino.arduinofullstack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88864260905-gt9emuu8v2svc58u5884voc42q883vlf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nextlevel.playarduino.arduinofullstack",
+            "certificate_hash": "7725b99149309c152094fc1cf99197df2259d03a"
+          }
+        },
+        {
+          "client_id": "88864260905-qmi7qktsdd479gqjo6jheurmkpibf362.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyigBcf8ss3EeyjBFMD-4Otum9VERVz08"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88864260905-qmi7qktsdd479gqjo6jheurmkpibf362.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

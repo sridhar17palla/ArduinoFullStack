@@ -24,7 +24,7 @@ import com.nextlevel.playarduino.arduinofullstack.R;
 
 import java.util.Observable;
 
-public class MainActivity extends BaseActivity
+public class HomeActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Context mContext;

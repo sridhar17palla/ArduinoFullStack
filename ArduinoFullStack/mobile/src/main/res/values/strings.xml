@@ -7,7 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_log_screen">LogScreen</string>
 
-    <!--MainActivity-->
+    <!--HomeActivity-->
     <string name="connect_arduino_bluetooth">Connect to Arduino via Bluetooth</string>
     <string name="available_BT_devices">Available Bluetooth devices</string>
     <string name="andruino">Andruino</string>
@@ -17,4 +17,16 @@
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+
+
+
+    <!-- SignInActivity -->
+    <string name="sign_in_title_text">ArduinoFullStack Sign In</string>
+    <string name="signed_out">Sign Out</string>
+    <string name="sign_in">Sign In</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="loading">Loading ....</string>
 </resources>

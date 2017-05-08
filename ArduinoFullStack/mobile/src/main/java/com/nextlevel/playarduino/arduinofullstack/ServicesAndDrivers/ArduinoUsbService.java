@@ -10,10 +10,9 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.support.v4.app.NotificationCompat;
 
-import com.nextlevel.playarduino.arduinofullstack.ArduinoFullStack;
 import com.nextlevel.playarduino.arduinofullstack.Utility.Constants;
 import com.nextlevel.playarduino.arduinofullstack.R;
-import com.nextlevel.playarduino.arduinofullstack.Main.MainActivity;
+import com.nextlevel.playarduino.arduinofullstack.Main.HomeActivity;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -27,6 +26,7 @@ public class ArduinoUsbService extends Service implements ArduinoUsbDrivers.Ardu
     public final static String LOG_TAG = "ArduinoUsbService";
     public static boolean IS_SERVICE_RUNNING = false;
     private ArduinoUsbDrivers mArduinoDrivers;
+    private boolean mUseDummyArduino = true;
 
     /**
      * Return the communication channel to the service.  May return null if
@@ -69,7 +69,7 @@ public class ArduinoUsbService extends Service implements ArduinoUsbDrivers.Ardu
         if (intent != null && intent.getAction().equals(Constants.ACTION.STARTFOREGROUND_ACTION)) {
             Log.i(LOG_TAG, "Received STARTFOREGROUND_ACTION Intent ");
 
-            Intent notificationIntent = new Intent(this, MainActivity.class);
+            Intent notificationIntent = new Intent(this, HomeActivity.class);
             notificationIntent.setAction(Constants.ACTION.SEND_ACTION);
             notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                     | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -100,7 +100,7 @@ public class ArduinoUsbService extends Service implements ArduinoUsbDrivers.Ardu
                     notification);
         } else if (intent != null && intent.getAction().equals(Constants.ACTION.SEND_ACTION)) {
             Log.i(LOG_TAG, "Received SEND_ACTION Intent");
-            mArduinoDrivers.sendData(intent.getStringExtra(Constants.MESSAGE));
+            sendDataToArduino(intent.getStringExtra(Constants.MESSAGE));
 
         } else if (intent != null && intent.getAction().equals(Constants.ACTION.RECONNECT_ACTION)) {
             Log.i(LOG_TAG, "Received RECONNECT_ACTION Intent");
@@ -119,12 +119,16 @@ public class ArduinoUsbService extends Service implements ArduinoUsbDrivers.Ardu
 
 
     private void arduinoDriversInitialization() {
-        mArduinoDrivers = ArduinoUsbDrivers.getArduino(this);
-        mArduinoDrivers.setArduinoLister(this);
-        if (!mArduinoDrivers.isDeviceConnected()) {
-            mArduinoDrivers.init(this);
-        } else {
-            Log.d(LOG_TAG, "No device connected");
+        if(!mUseDummyArduino) {
+            mArduinoDrivers = ArduinoUsbDrivers.getArduino(this);
+            mArduinoDrivers.setArduinoLister(this);
+            if (!mArduinoDrivers.isDeviceConnected()) {
+                mArduinoDrivers.init(this);
+            } else {
+                Log.d(LOG_TAG, "No device connected");
+            }
+        }else{
+            Log.d(LOG_TAG, "Using Dummy Arduino");
         }
     }
 
@@ -133,6 +137,20 @@ public class ArduinoUsbService extends Service implements ArduinoUsbDrivers.Ardu
     public void onDestroy() {
         PubNubHelper.getPubNub().deleteObserver(this);
         super.onDestroy();
+    }
+
+    private void sendDataToArduino(String data){
+        if(mUseDummyArduino){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            onArduinoDataReceived(data);
+
+        }else{
+            mArduinoDrivers.sendData(data);
+        }
     }
 
     @Override
