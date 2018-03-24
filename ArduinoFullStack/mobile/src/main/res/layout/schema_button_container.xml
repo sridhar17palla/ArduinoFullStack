@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/seek_bar_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- TODO : need to add hint text for Seekbar images -->
+            <Button
+                android:id="@+id/seek_bar_hint"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="x:"
+                android:hint="Reset X axis gyro"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp">
+                <ImageView
+                    android:id="@+id/seek_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/gyro_seekbar_bgd"/>
+                <ImageView
+                    android:id="@+id/seek_bar_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/gyro_seekbar_thumb"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/arrow_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/arrow_up_button" />
+
+        <TextView
+            android:id="@+id/text_on_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="text_on_image"
+            android:maxLines="1"
+            android:visibility="invisible"
+            android:textSize="6sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_under_image"
+        android:text="under the image text"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

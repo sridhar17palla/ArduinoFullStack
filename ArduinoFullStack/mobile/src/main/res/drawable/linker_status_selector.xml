@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Linker Device is ONLINE -->
+    <item
+        android:drawable="@drawable/linker_online_status"
+        android:state_selected="true"/>
+
+    <!-- Linker Device is OFFLINE -->
+    <item
+        android:drawable="@drawable/linker_offline_status"
+        android:state_selected="false"/>
+</selector>

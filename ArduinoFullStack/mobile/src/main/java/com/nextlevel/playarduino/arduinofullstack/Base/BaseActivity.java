@@ -4,13 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.hardware.usb.UsbDevice;
-import android.hardware.usb.UsbDeviceConnection;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoUsbService;
+import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoService;
 import com.nextlevel.playarduino.arduinofullstack.Utility.Constants;
 import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.PubNubHelper;
 import com.nextlevel.playarduino.arduinofullstack.R;
@@ -59,7 +57,7 @@ public class BaseActivity extends AppCompatActivity implements Observer{
 
     protected void sendArduino(String message){
         // Intent intent = new Intent(Constants.ACTION.BROADCAST_SERVICE_NOTIFICATION);
-        Intent intent = new Intent(this, ArduinoUsbService.class);
+        Intent intent = new Intent(this, ArduinoService.class);
         intent.setAction(Constants.ACTION.SEND_ACTION);
         intent.putExtra(Constants.MESSAGE,message);
         // sendBroadcast(intent);

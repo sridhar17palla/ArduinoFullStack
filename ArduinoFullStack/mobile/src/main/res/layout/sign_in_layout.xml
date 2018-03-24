@@ -53,6 +53,19 @@ android:weightSum="4">
         tools:text="Optional Action"
         tools:visibility="visible" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="true"
+        android:gravity="center"
+        android:maxLines="5"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"
+        android:text="Work like everything you do is for your family. This way we do the work with more perfectness, careness and love."
+        android:textSize="24sp" />
+
 </LinearLayout>
 
 

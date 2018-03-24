@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nextlevel.playarduino.arduinofullstack.ArduinoFullStack;
-import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoUsbService;
+import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoService;
 import com.nextlevel.playarduino.arduinofullstack.Base.BaseFragment;
 import com.nextlevel.playarduino.arduinofullstack.Utility.Constants;
 import com.nextlevel.playarduino.arduinofullstack.R;
@@ -73,14 +73,14 @@ public class UsbFragment extends BaseFragment {
     }
 
     public void startAndroidUsbService() {
-        Intent service = new Intent(getActivity(), ArduinoUsbService.class);
-        if (!ArduinoUsbService.IS_SERVICE_RUNNING) {
+        Intent service = new Intent(getActivity(), ArduinoService.class);
+        if (!ArduinoService.IS_SERVICE_RUNNING) {
             service.setAction(Constants.ACTION.STARTFOREGROUND_ACTION);
-            ArduinoUsbService.IS_SERVICE_RUNNING = true;
+            ArduinoService.IS_SERVICE_RUNNING = true;
             getActivity().startService(service);
         } /*else {
             service.setAction(Constants.ACTION.STOP_FOREGROUND_ACTION);
-            ArduinoUsbService.IS_SERVICE_RUNNING = false;
+            ArduinoService.IS_SERVICE_RUNNING = false;
 
         }
         startService(service);*/

@@ -18,6 +18,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+    <!-- TEXT VIEW -->
     <style name="title_strings" parent="@android:style/Widget.TextView">
         <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:textColor">@color/teal</item>
@@ -43,6 +44,8 @@
         <item name="android:layout_marginLeft">8dp</item>
     </style>
 
+
+    <!-- EDIT TEXT -->
     <style name="normal_edit_text" parent="@android:style/Widget.EditText">
         <item name="android:textSize">@dimen/medium_text_size</item>
         <item name="android:textColor">@color/grey</item>
@@ -51,6 +54,8 @@
         <item name="android:layout_marginLeft">8dp</item>
     </style>
 
+
+    <!-- BUTTONS -->
     <style name="normal_button_text" parent="@android:style/Widget.Button">
         <item name="android:textSize">@dimen/medium_text_size</item>
         <item name="android:layout_marginTop">8dp</item>
@@ -59,6 +64,20 @@
         <item name="android:padding">5dp</item>
     </style>
 
+    <!-- IMAGE VIEW -->
+
+
+    <!-- IMAGE BUTTON -->
+    <style name="medium_image_button" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_width">@dimen/medium_width</item>
+        <item name="android:layout_height">@dimen/medium_height</item>
+        <item name="android:layout_margin">@dimen/small_margin</item>
+
+        </style>
+
+
+
+    <!-- APP THEME -->
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>

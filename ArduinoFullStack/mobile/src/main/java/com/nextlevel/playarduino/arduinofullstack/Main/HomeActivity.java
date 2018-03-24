@@ -19,7 +19,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.nextlevel.playarduino.arduinofullstack.Base.BaseActivity;
-import com.nextlevel.playarduino.arduinofullstack.Monitor.LogScreen;
+import com.nextlevel.playarduino.arduinofullstack.Main.LinkerDeviceList.LinkerDeviceListFragment;
+import com.nextlevel.playarduino.arduinofullstack.Main.Monitor.TerminalFragment;
 import com.nextlevel.playarduino.arduinofullstack.R;
 
 import java.util.Observable;
@@ -28,8 +29,10 @@ public class HomeActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Context mContext;
-    private AndruinoFragment mAndruinoFragment;
-    private BluetoothFragment mBluetoothFragmen;
+
+    private LinkerDeviceListFragment mLinkerDeviceListFragment;
+    //private PubNubFragment mPubNubFragment;
+    private BluetoothFragment mBluetoothFragment;
     private UsbFragment mUsbFragment;
 
     @Override
@@ -40,15 +43,6 @@ public class HomeActivity extends BaseActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -92,7 +86,7 @@ public class HomeActivity extends BaseActivity
         int id = item.getItemId();
 
         if (id == R.id.log_screen) {
-            startActivity(new Intent(this, LogScreen.class));
+            startActivity(new Intent(this, TerminalFragment.class));
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -131,25 +125,29 @@ public class HomeActivity extends BaseActivity
             switch (pos) {
 
                 case 0:
-                    if(mAndruinoFragment==null) {
-                        mAndruinoFragment = new AndruinoFragment();
+                    if(mLinkerDeviceListFragment ==null) {
+                        mLinkerDeviceListFragment= new LinkerDeviceListFragment();
                     }
-                    return mAndruinoFragment;
+                    return mLinkerDeviceListFragment;
+                    /*if(mPubNubFragment ==null) {
+                        mPubNubFragment = new PubNubFragment();
+                    }
+                    return mPubNubFragment;*/
                 case 1:
-                    if(mBluetoothFragmen==null) {
-                        mBluetoothFragmen = new BluetoothFragment();
+                    if(mBluetoothFragment ==null) {
+                        mBluetoothFragment = new BluetoothFragment();
                     }
-                    return mBluetoothFragmen;
+                    return mBluetoothFragment;
                 case 2:
                     if(mUsbFragment==null){
                         mUsbFragment = new UsbFragment();
                     }
                     return mUsbFragment;
                 default:
-                    if(mAndruinoFragment==null) {
-                        mAndruinoFragment = new AndruinoFragment();
+                    if(mLinkerDeviceListFragment ==null) {
+                        mLinkerDeviceListFragment= new LinkerDeviceListFragment();
                     }
-                    return mAndruinoFragment;
+                    return mLinkerDeviceListFragment;
             }
         }
 
@@ -161,17 +159,19 @@ public class HomeActivity extends BaseActivity
 
     @Override
     public void onArduinoDataReceived(String data) {
-        if(mAndruinoFragment==null) {
-            mAndruinoFragment = new AndruinoFragment();
-        }
-        if(mBluetoothFragmen==null) {
-            mBluetoothFragmen = new BluetoothFragment();
+        /*if(mPubNubFragment ==null) {
+            mPubNubFragment = new PubNubFragment();
+        }*/
+        if(mBluetoothFragment ==null) {
+            mBluetoothFragment = new BluetoothFragment();
         }
         if(mUsbFragment==null){
             mUsbFragment = new UsbFragment();
         }
-        mAndruinoFragment.onArduinoDataReceived(data);
-        mBluetoothFragmen.onArduinoDataReceived(data);
+       // mPubNubFragment.onArduinoDataReceived(data);
+
+        //TODO: NEED TO IMPLEMENT onArduinoDataReceived in LINKERDEVICELISTFRAGMENT
+        mBluetoothFragment.onArduinoDataReceived(data);
         mUsbFragment.onArduinoDataReceived(data);
     }
 

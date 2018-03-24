@@ -19,6 +19,11 @@ android {
     compileSdkVersion 24
     buildToolsVersion '25.0.3'
 
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+
     defaultConfig {
         applicationId "com.nextlevel.playarduino.arduinofullstack"
         minSdkVersion 21
@@ -46,14 +51,20 @@ dependencies {
     //compile 'com.pubnub:pubnub-android:3.7.6'
     //compile 'com.android.support:support-v4:24.2.1'
     compile group: 'com.pubnub', name: 'pubnub-gson', version: '4.4.1'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.2.1'
     //compile 'com.google.android.gms:play-services-appindexing:8.4.0'
     //compile 'com.google.android.gms:play-services-auth:10.2.1'
-    compile 'com.google.android.gms:play-services-auth:9.6.1'
     //compile 'com.google.android.gms:play-services-auth:9.8.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.google.android.gms:play-services-auth:9.6.1'
     compile 'com.google.android.gms:play-services:9.6.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.orhanobut:logger:1.15'
     testCompile 'junit:junit:4.12'
+    compile files('libs/audio_device_java.jar')
+    compile files('libs/autobanh.jar')
+    compile files('libs/base_java.jar')
+    compile files('libs/libjingle_peerconnection.jar')
 }
 apply plugin: 'com.google.gms.google-services'

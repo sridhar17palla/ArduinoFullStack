@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RemoteButtonsBkgColor">
+        <attr name="remote_bkg_color" format="color" />
+    </declare-styleable>
+
+    <style name="BlackColor">
+        <item name="remote_bkg_color">#555577</item>
+    </style>
+    <style name="GreyColor">
+        <item name="remote_bkg_color">#999999</item>
+    </style>
+    <style name="WhiteColor">
+        <item name="remote_bkg_color">#ffffff</item>
+    </style>
+    <style name="RedColor">
+        <item name="remote_bkg_color">#ccff3333</item>
+    </style>
+    <style name="GreenColor">
+        <item name="remote_bkg_color">#cc33ff33</item>
+    </style>
+    <style name="BlueColor">
+        <item name="remote_bkg_color">#cc3333ff</item>
+    </style>
+    <style name="OrangeColor">
+        <item name="remote_bkg_color">#ccff8c00</item>
+    </style>
+    <style name="YellowColor">
+        <item name="remote_bkg_color">#ccffff00</item>
+    </style>
+</resources>

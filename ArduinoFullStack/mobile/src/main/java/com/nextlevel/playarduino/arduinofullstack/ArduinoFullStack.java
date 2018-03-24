@@ -4,6 +4,7 @@ import android.app.Application;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
 
+import com.nextlevel.playarduino.arduinofullstack.Models.CommanderDevice;
 import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.PubNubHelper;
 
 /**
@@ -11,6 +12,9 @@ import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.PubNubHelpe
  */
 
 public class ArduinoFullStack extends Application {
+
+    private CommanderDevice mCommanderDevice = new CommanderDevice();
+
     public static PubNubHelper mPubNubHelper;
     public UsbDevice mUsbDevice;
     public UsbDeviceConnection mDeviceConnection;
@@ -36,6 +40,14 @@ public class ArduinoFullStack extends Application {
     public void onCreate() {
         super.onCreate();
         mPubNubHelper = PubNubHelper.getPubNub();
+    }
+
+    public CommanderDevice getCommanderDevice() {
+        return mCommanderDevice;
+    }
+
+    public void setCommanderDevice(CommanderDevice mCommanderDevice) {
+        this.mCommanderDevice = mCommanderDevice;
     }
 
 

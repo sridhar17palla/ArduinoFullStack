@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/large_xx_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UserName" />
+
+        <TextView
+            android:id="@+id/permission_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/user_name"
+            android:text="permission_view" />
+
+        <TextView
+            android:id="@+id/admin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/user_name"
+            android:text="admin_text" />
+
+        <TextView
+            android:id="@+id/last_command_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="last_command_sent" />
+
+        <ImageView
+            android:id="@+id/user_status_indicator"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_above="@+id/permission_view"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/user_name"
+            android:background="@drawable/linker_status_selector" />
+
+    </RelativeLayout>
+</LinearLayout>

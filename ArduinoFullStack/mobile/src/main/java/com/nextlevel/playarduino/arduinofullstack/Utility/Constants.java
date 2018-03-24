@@ -5,6 +5,20 @@ package com.nextlevel.playarduino.arduinofullstack.Utility;
  */
 
 public class Constants {
+
+    ////////////////////USER TYPES ////////////////////////////
+
+    public static final String USER_TYPE_PAID_USER = "paid user";
+    public static final String USER_TYPE_FREE_USER = "free user";
+
+
+    public static final String PERMISSION_LEVEL_ROOT = "root";
+    public static final String PERMISSION_LEVEL_ADMIN = "admin";
+    public static final String PERMISSION_LEVEL_USER = "user";
+
+
+
+
     public static final String MESSAGE = "message";
     public static final String DEVICE_DETAILS = "device details";
     public static final String DEVICE_CONNECTION_DETAILS = "device connection details";

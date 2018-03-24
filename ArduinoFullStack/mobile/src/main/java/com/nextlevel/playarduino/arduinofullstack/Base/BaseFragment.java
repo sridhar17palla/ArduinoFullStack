@@ -1,6 +1,5 @@
 package com.nextlevel.playarduino.arduinofullstack.Base;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoUsbService;
+import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.ArduinoService;
 import com.nextlevel.playarduino.arduinofullstack.Utility.Constants;
 import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.PubNubHelper;
 
@@ -62,7 +61,7 @@ public class BaseFragment extends Fragment implements Observer {
 
     protected void sendArduino(String message) {
         // Intent intent = new Intent(Constants.ACTION.BROADCAST_SERVICE_NOTIFICATION);
-        Intent intent = new Intent(getActivity(), ArduinoUsbService.class);
+        Intent intent = new Intent(getActivity(), ArduinoService.class);
         intent.setAction(Constants.ACTION.SEND_ACTION);
         intent.putExtra(Constants.MESSAGE, message);
         // sendBroadcast(intent);

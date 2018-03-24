@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.nextlevel.playarduino.arduinofullstack.Base.BaseFragment;
 import com.nextlevel.playarduino.arduinofullstack.R;
 
