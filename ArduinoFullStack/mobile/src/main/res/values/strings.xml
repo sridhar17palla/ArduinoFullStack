@@ -27,12 +27,15 @@
 
 
     <!-- SignInActivity -->
-    <string name="sign_in_title_text">ArduinoFullStack Sign In</string>
+    <string name="sign_in_title_text">Sign In</string>
     <string name="signed_out">Sign Out</string>
     <string name="sign_in">Sign In</string>
     <string name="disconnect">Disconnect</string>
-    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="signed_in_format">Signed in as: %s</string>
     <string name="loading">Loading ....</string>
+    <string name="sign_in_success_message">Successfully signed in as </string>
+    <string name="sign_in_failure_message">Failed to signed in as </string>
+    <string name="sign_in_signout_message">Signing Out .....</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,32 +1,24 @@
 package com.nextlevel.playarduino.arduinofullstack.Main;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import com.nextlevel.playarduino.arduinofullstack.Base.BaseActivity;
 import com.nextlevel.playarduino.arduinofullstack.Main.LinkerDeviceList.LinkerDeviceListFragment;
-import com.nextlevel.playarduino.arduinofullstack.Main.Monitor.TerminalFragment;
 import com.nextlevel.playarduino.arduinofullstack.R;
 
 import java.util.Observable;
 
-public class HomeActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends BaseActivity{
+       // implements NavigationView.OnNavigationItemSelectedListener {
 
     private Context mContext;
 
@@ -50,8 +42,11 @@ public class HomeActivity extends BaseActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        /*TODO-UI : We are following UI as per Whatsapp. So NavigationView may not be required.
+            Comment Hamburger icon and NavigationView for now.
+         */
+       /* NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
@@ -64,7 +59,10 @@ public class HomeActivity extends BaseActivity
         return true;
     }
 
-    @Override
+     /*TODO-UI : We are following UI as per Whatsapp. So NavigationView may not be required.
+            Comment Hamburger icon, NavigationView and its related code for now.
+            */
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -113,7 +111,7 @@ public class HomeActivity extends BaseActivity
             super.onBackPressed();
         }
     }
-
+*/
     private class MainViewPagerAdapter extends FragmentPagerAdapter {
 
         public MainViewPagerAdapter(FragmentManager fm) {
@@ -155,8 +153,16 @@ public class HomeActivity extends BaseActivity
         public int getCount() {
             return 3;
         }
-    }
 
+         @Override
+         public CharSequence getPageTitle(int position) {
+             return super.getPageTitle(position);
+         }
+     }
+
+
+    //TODO-LOGIC need to establish communication between Arduino module
+    // and other components via RxJava.
     @Override
     public void onArduinoDataReceived(String data) {
         /*if(mPubNubFragment ==null) {
