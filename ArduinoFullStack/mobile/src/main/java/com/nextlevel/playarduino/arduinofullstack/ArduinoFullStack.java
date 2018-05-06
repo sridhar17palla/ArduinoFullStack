@@ -13,6 +13,9 @@ import com.nextlevel.playarduino.arduinofullstack.ServicesAndDrivers.PubNubHelpe
 
 public class ArduinoFullStack extends Application {
 
+
+    private static ArduinoFullStack applicationContext;
+
     private CommanderDevice mCommanderDevice = new CommanderDevice();
 
     public static PubNubHelper mPubNubHelper;
@@ -39,6 +42,7 @@ public class ArduinoFullStack extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        applicationContext = this;
         mPubNubHelper = PubNubHelper.getPubNub();
     }
 
@@ -50,5 +54,8 @@ public class ArduinoFullStack extends Application {
         this.mCommanderDevice = mCommanderDevice;
     }
 
+    public static ArduinoFullStack getInstance(){
+        return applicationContext;
+    }
 
 }

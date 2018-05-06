@@ -2,6 +2,7 @@ package com.nextlevel.playarduino.arduinofullstack.Main;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -50,6 +51,9 @@ public class HomeActivity extends BaseActivity{
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -156,7 +160,12 @@ public class HomeActivity extends BaseActivity{
 
          @Override
          public CharSequence getPageTitle(int position) {
-             return super.getPageTitle(position);
+            switch (position){
+                case 0: return "Remote";
+                case 1: return "Bluetooth";
+                case 2: return "USB";
+                default: return "Remote";
+            }
          }
      }
 

@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_margin="10dp"
-            android:background="@color/lite_grey"
+            android:background="@color/grey_medium_light"
             android:visibility="gone"/>
 
         <LinearLayout

@@ -20,11 +20,16 @@
     <dimen name="title_text_size">18sp</dimen>
     <dimen name="text_size_sub_title">16sp</dimen>
     <dimen name="text_size_medium">15sp</dimen>
+    <!-- removing below line is causing error in one layout. Couldn't fix as per 04/15/2018 -->
     <dimen name="medium_text_size">15sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
     <!-- Padding -->
-
+    <dimen name="small_padding">3dp</dimen>
+    <dimen name="medium_padding">6dp</dimen>
+    <dimen name="large_padding">10dp</dimen>
+    <dimen name="large_x_padding">30dp</dimen>
+    <dimen name="large_xx_padding">50dp</dimen>
 
 
     <!-- margines -->

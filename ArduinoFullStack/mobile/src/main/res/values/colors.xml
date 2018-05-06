@@ -11,9 +11,11 @@
     <color name="transparent">#00000000</color>
 
     <color name="grey">#888888</color>
-    <color name="lite_grey">#aaaaaa</color>
+    <color name="grey_medium_light">#aaaaaa</color>
+    <color name="grey_light">#dddddd</color>
 
     <color name="green">#00ff00</color>
+    <color name="green_dark">#4caf50</color>
     <color name="lite_green">#bbff77</color>
 
     <color name="white">#ffffff</color>
@@ -25,6 +27,7 @@
 
     <color name="blue">#0000ff</color>
     <color name="blue_sky">#00ADFF</color>
+    <color name="blue_sky_lite">#6495ED</color>
     <color name="blue_grey_300">#3C6BC9</color>
     <color name="blue_grey_500">#607D8B</color>
     <color name="blue_grey_600">#546E7A</color>

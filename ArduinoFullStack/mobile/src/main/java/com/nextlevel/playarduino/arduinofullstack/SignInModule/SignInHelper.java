@@ -1,5 +1,6 @@
 package com.nextlevel.playarduino.arduinofullstack.SignInModule;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.util.Log;
 
@@ -13,6 +14,8 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.nextlevel.playarduino.arduinofullstack.DataBase.DataHelper;
 import com.nextlevel.playarduino.arduinofullstack.Models.RootUser;
+import com.nextlevel.playarduino.arduinofullstack.R;
+import com.nextlevel.playarduino.arduinofullstack.Utility.Utils;
 
 /**
  * Created by sukumar on 3/24/18.
@@ -79,8 +82,14 @@ public class SignInHelper {
                 + ",  get statusMessage" + result.getStatus().getStatusMessage());
         //TODO-LOGIC : "getSignInAccount()" method returns NULL, if google SignIn is not done yet. Need to Handle this.
         GoogleSignInAccount acct = result.getSignInAccount();
-        if (result.isSuccess()) {
 
+        if (acct == null) {
+            AlertDialog errorDialog = Utils.showErrorDialog(mSignInActivity,R.string.ERROR_TYPE_authentication,R.string.google_sign_in_not_yet_done);
+            errorDialog.show();
+            return;
+        }
+
+        if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             RootUser rootUser = new RootUser();
             if (acct.getGivenName() != null && !acct.getGivenName().isEmpty())
@@ -96,7 +105,7 @@ public class SignInHelper {
         }
     }
 
-    void signIn(){
+    void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         mSignInActivity.startActivityForResult(signInIntent, RC_SIGN_IN);
     }

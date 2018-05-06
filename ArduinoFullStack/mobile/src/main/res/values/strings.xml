@@ -36,7 +36,9 @@
     <string name="sign_in_success_message">Successfully signed in as </string>
     <string name="sign_in_failure_message">Failed to signed in as </string>
     <string name="sign_in_signout_message">Signing Out .....</string>
-
+    <string name="ERROR_TYPE_authentication">Authentication Error</string>
+    <string name="google_sign_in_not_yet_done"> Unable to authenticate user because Google Signing In not yet performed on this device.
+        Please do Google SignIn before you proceed.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
